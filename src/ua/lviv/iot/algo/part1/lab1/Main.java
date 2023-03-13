@@ -38,6 +38,7 @@ public class Printer {
     }
 
     public static void main(String[] args) {
+<<<<<<< HEAD
         Printer[] printers = {new Printer(),new Printer("Epson", "Inkjet", true, false, 50, 20)
                 ,getInstance(),getInstance()};
         for(Printer printer : printers) {
@@ -45,3 +46,17 @@ public class Printer {
         }
     }
 }
+=======
+        Printer[] printers = new Printer[4];
+        printers[0] = new Printer();
+        printers[1] = new Printer("Epson", "Inkjet", true, false, 50, 20);
+        printers[2] = getInstance();
+        printers[3] = getInstance();
+
+        for (int i = 0; i < printers.length; i++) {
+            System.out.println(printers[i].toString());
+        }
+    }
+
+}
+>>>>>>> 24b8aaebb5b678dfc5030bf48be870566af5791a
