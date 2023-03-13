@@ -52,8 +52,8 @@ public class Printer {
         printers[2] = getInstance();
         printers[3] = getInstance();
 
-        for (Printer printer : printers) {
-            System.out.println(printer.toString());
+        for (int i = 0; i < printers.length; i++) {
+            System.out.println(printers[i].toString());
         }
     }
 
