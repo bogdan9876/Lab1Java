@@ -13,13 +13,13 @@ public class PrinterManager{
 
     public List<Printer> findByType(String type) {
         return printers.stream()
-                .filter(p -> p.getType().equals(type))
-                .collect(Collectors.toList());
+                        .filter(p -> p.getType().equals(type))
+                        .collect(Collectors.toList());
     }
     public List<Printer> findLargeVolumePrinter(int paperTrayCapacity) {
         return printers.stream()
-                .filter(p -> p.getPaperTrayCapacity() > paperTrayCapacity)
-                .collect(Collectors.toList());
+                        .filter(p -> p.getPaperTrayCapacity() > paperTrayCapacity)
+                        .collect(Collectors.toList());
     }
 
     public static void main(String[] args) {

@@ -14,14 +14,11 @@ public abstract class Printer {
     private boolean isColor;
     private boolean isDuplex;
     private int paperTrayCapacity;
+    private int pagesCapability;
+    private int remainingPagesCount;
     private int paperCount;
     public abstract void print(int pages);
     public abstract void loadPaper(int count);
-    private int remainingPagesCount;
-
-
-    private int pagesCapability;
-
     public abstract int getRemainingPagesCount();
 
 }

@@ -5,23 +5,16 @@ import lombok.*;
 public class MatrixPrinter extends Printer{
     private int needlesWorks;
     private int sensors;
-    public MatrixPrinter(int needlesWorks,int sensors, String model,
-                      String type,boolean isColor,boolean isDuplex,int paperTrayCapacity,
-                      int paperCount, int remainingPagesCount,int pagesCapability){
-        super(model,type,isColor,isDuplex,paperTrayCapacity,paperCount,remainingPagesCount,pagesCapability);
+    public MatrixPrinter(int needlesWorks, int sensors, String model,
+                      String type, boolean isColor, boolean isDuplex, int paperTrayCapacity,
+                      int paperCount, int remainingPagesCount, int pagesCapability){
+        super(model, type, isColor, isDuplex, paperTrayCapacity, paperCount, remainingPagesCount, pagesCapability);
         this.needlesWorks=needlesWorks;
         this.sensors=sensors;}
-
     @Override
-    public void print(int pages) {
-
-    }
-
+    public void print(int pages) {}
     @Override
-    public void loadPaper(int count) {
-
-    }
-
+    public void loadPaper(int count) {}
     @Override
     public int getRemainingPagesCount() {
         return getPagesCapability();

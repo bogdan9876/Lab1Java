@@ -10,28 +10,21 @@ public class InkjetPrinter extends Printer{
     private int magenta;
     private int yellow;
     private int black;
-
-   public InkjetPrinter(String colorType,int colorLevel,int cyan,int magenta,int yellow,int black, String model,
-                 String type,boolean isColor,boolean isDuplex,int paperTrayCapacity,
-                 int paperCount, int remainingPagesCount,int pagesCapability){
-      super(model,type,isColor,isDuplex,paperTrayCapacity,paperCount,remainingPagesCount,pagesCapability);
-      this.magenta= magenta;
-      this.colorType= colorType;
-      this.colorLevel= colorLevel;
-      this.cyan= cyan;
-      this.yellow= yellow;
-      this.black= black;
+   public InkjetPrinter(String colorType, int colorLevel, int cyan, int magenta, int yellow, int black, String model,
+                 String type, boolean isColor, boolean isDuplex, int paperTrayCapacity,
+                 int paperCount, int remainingPagesCount, int pagesCapability){
+      super(model, type, isColor , isDuplex, paperTrayCapacity, paperCount, remainingPagesCount, pagesCapability);
+      this.magenta = magenta;
+      this.colorType = colorType;
+      this.colorLevel = colorLevel;
+      this.cyan = cyan;
+      this.yellow = yellow;
+      this.black = black;
     }
-
     @Override
-    public void print(int pages) {
-
-    }
-
+    public void print(int pages) {}
     @Override
-    public void loadPaper(int count) {
-
-    }
+    public void loadPaper(int count) {}
 
     @Override
     public int getRemainingPagesCount() {
