@@ -13,9 +13,17 @@ public class LedPrinter extends Printer{
         this.zoom=zoom;
     }
     @Override
-    public void print(int pages) {}
+    public void print(int pages) {
+        int amountPaperAfterPrint = getPaperCount() - pages;
+        setPaperCount(amountPaperAfterPrint);
+    }
+
     @Override
-    public void loadPaper(int count) {}
+    public void loadPaper(int count) {
+        int amountPaperAfterPrint = getPaperCount() + count;
+        setPaperCount(amountPaperAfterPrint);
+    }
+
     @Override
     public int getRemainingPagesCount() {
         return getPagesCapability();

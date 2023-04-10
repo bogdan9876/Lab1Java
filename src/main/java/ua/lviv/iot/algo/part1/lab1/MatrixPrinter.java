@@ -10,11 +10,18 @@ public class MatrixPrinter extends Printer{
                       int paperCount, int remainingPagesCount, int pagesCapability){
         super(model, type, isColor, isDuplex, paperTrayCapacity, paperCount, remainingPagesCount, pagesCapability);
         this.needlesWorks=needlesWorks;
-        this.sensors=sensors;}
+        this.sensors=sensors;
+    }
     @Override
-    public void print(int pages) {}
+    public void print(int pages) {
+        int amountPaperAfterPrint = getPaperCount() - pages;
+        setPaperCount(amountPaperAfterPrint);
+    }
     @Override
-    public void loadPaper(int count) {}
+    public void loadPaper(int count) {
+        int amountPaperAfterPrint = getPaperCount() + count;
+        setPaperCount(amountPaperAfterPrint);
+    }
     @Override
     public int getRemainingPagesCount() {
         return getPagesCapability();

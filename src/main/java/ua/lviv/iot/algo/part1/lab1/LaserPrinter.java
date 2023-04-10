@@ -6,10 +6,17 @@ import lombok.*;
 public class LaserPrinter extends Printer{
     private int pagesDone;
     @Override
-    public void print(int pages) {}
+    public void print(int pages) {
+        int amountPaperAfterPrint = getPaperCount() - pages;
+        setPaperCount(amountPaperAfterPrint);
+    }
 
     @Override
-    public void loadPaper(int count) {}
+    public void loadPaper(int count) {
+        int amountPaperAfterPrint = getPaperCount() + count;
+        setPaperCount(amountPaperAfterPrint);
+    }
+
     public LaserPrinter(int pagesDone, String model,
                         String type, boolean isColor, boolean isDuplex, int paperTrayCapacity,
                         int paperCount, int remainingPagesCount, int pagesCapability){
