@@ -13,6 +13,7 @@ class PrinterManagerTest {
     @BeforeEach
     public void setup() {
         printerManager = new PrinterManager();
+        printerManager.printers.clear();
         printerManager.addPrinter(new LaserPrinter(10,"RealRif","Laser",true,true,
                 250,0,250, 500));
         printerManager.addPrinter(new LaserPrinter(0, "Soliq", "Laser", true, false,
@@ -35,19 +36,19 @@ class PrinterManagerTest {
 
     @Test
     public void testFindByType() {
-        List<Printer> foundPrinters = printerManager.findByType("LED");
-        Assertions.assertEquals(2, foundPrinters.size());
-        for (Printer printer : foundPrinters) {
+        List<Printer> foundedPrinters = printerManager.findByType("LED");
+        Assertions.assertEquals(2, foundedPrinters.size());
+        for (Printer printer : foundedPrinters) {
             Assertions.assertEquals("LED", printer.getType());
         }
     }
 
     @Test
     public void testFindLargeVolumePrinter() {
-        List<Printer> foundPrinters = printerManager.findLargeVolumePrinter(499);
-        Assertions.assertEquals(1, foundPrinters.size());
-        for (Printer printer : foundPrinters) {
-            Assertions.assertTrue(printer.getPaperTrayCapacity() > 499);
+        List<Printer> foundedPrinters1 = printerManager.findLargeVolumePrinter(499);
+        Assertions.assertEquals(1, foundedPrinters1.size());
+        for (Printer printer1 : foundedPrinters1) {
+            Assertions.assertTrue(printer1.getPaperTrayCapacity() > 499);
         }
     }
 }

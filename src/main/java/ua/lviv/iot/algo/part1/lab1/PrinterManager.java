@@ -1,24 +1,25 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import java.security.PublicKey;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class PrinterManager{
-    static List<Printer> printers = new LinkedList<Printer>();
-    public void addPrinter(final Printer printer){
+public final class PrinterManager {
+    public static List<Printer> printers = new LinkedList<Printer>();
+
+    public void addPrinter(final Printer printer) {
         printers.add(printer);
     }
 
-    public List<Printer> findByType(String type) {
+    public List<Printer> findByType(final String type) {
         return printers.stream()
                         .filter(p -> p.getType().equals(type))
                         .collect(Collectors.toList());
     }
-    public List<Printer> findLargeVolumePrinter(int paperTrayCapacity) {
+
+    public List<Printer> findLargeVolumePrinter(final int paperTrayCap) {
         return printers.stream()
-                        .filter(p -> p.getPaperTrayCapacity() > paperTrayCapacity)
+                        .filter(p -> p.getPaperTrayCapacity() > paperTrayCap)
                         .collect(Collectors.toList());
     }
-};
+}

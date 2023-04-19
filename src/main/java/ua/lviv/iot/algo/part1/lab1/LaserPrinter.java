@@ -1,28 +1,34 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
+import lombok.ToString;
 
 @ToString(callSuper = true)
-public class LaserPrinter extends Printer{
-    private int pagesDone;
+public final class LaserPrinter extends Printer {
+    private final int pagesDone;
+
     @Override
-    public void print(int pages) {
+    public void print(final int pages) {
         int amountPaperAfterPrint = getPaperCount() - pages;
         setPaperCount(amountPaperAfterPrint);
     }
 
     @Override
-    public void loadPaper(int count) {
-        int amountPaperAfterPrint = getPaperCount() + count;
-        setPaperCount(amountPaperAfterPrint);
+    public void loadPaper(final int count) {
+        int amountPaperAfterLoad = getPaperCount() + count;
+        setPaperCount(amountPaperAfterLoad);
     }
 
-    public LaserPrinter(int pagesDone, String model,
-                        String type, boolean isColor, boolean isDuplex, int paperTrayCapacity,
-                        int paperCount, int remainingPagesCount, int pagesCapability){
-        super(model, type, isColor, isDuplex, paperTrayCapacity, paperCount, remainingPagesCount, pagesCapability);
+    public LaserPrinter(final int pagesDone, final String model,
+                        final String type, final boolean isColor,
+                        final boolean isDuplex, final int paperTrayCapacity,
+                        final int paperCount, final int remainingPagesCount,
+                        final int pagesCapability) {
+        super(model, type, isColor, isDuplex,
+                paperTrayCapacity, paperCount,
+                remainingPagesCount, pagesCapability);
         this.pagesDone = pagesDone;
     }
+
     @Override
     public int getRemainingPagesCount() {
         return getPagesCapability();
