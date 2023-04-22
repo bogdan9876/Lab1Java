@@ -29,6 +29,14 @@ public final class InkjetPrinter extends Printer {
         this.black = black;
     }
 
+    public String getHeaders() {
+        return super.getHeaders() + ", colorType, colorLevel, cyan, magenta, yellow, black";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + colorType + ", " + colorLevel + ", " + cyan + ", " + magenta + ", " + yellow + ", " + black;
+    }
+
     @Override
     public void print(final int pages) {
         int amountPaperAfterPrint = getPaperCount() - pages;

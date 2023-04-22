@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="10.9.3">
+<file name="D:\JAVA(Intellij)\Lab4 - Copy\src\main\java\ua\lviv\iot\algo\part1\lab1\managers\PrinterManager.java">
+<error line="3" column="8" severity="error" message="Unused import - ua.lviv.iot.algo.part1.lab1.writers.PrinterWriter." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="4" column="42" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - ua.lviv.iot.algo.part1.lab1.models.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="33" column="29" severity="error" message="Parameter printers should be final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+</file>
+<file name="D:\JAVA(Intellij)\Lab4 - Copy\src\main\java\ua\lviv\iot\algo\part1\lab1\models\InkjetPrinter.java">
+<error line="19" column="12" severity="error" message="More than 7 parameters (found 14)." source="com.puppycrawl.tools.checkstyle.checks.sizes.ParameterNumberCheck"/>
+<error line="37" severity="error" message="Line is longer than 80 characters (found 92)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="41" severity="error" message="Line is longer than 80 characters (found 130)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="D:\JAVA(Intellij)\Lab4 - Copy\src\main\java\ua\lviv\iot\algo\part1\lab1\models\LaserPrinter.java">
+<error line="13" column="12" severity="error" message="More than 7 parameters (found 9)." source="com.puppycrawl.tools.checkstyle.checks.sizes.ParameterNumberCheck"/>
+</file>
+<file name="D:\JAVA(Intellij)\Lab4 - Copy\src\main\java\ua\lviv\iot\algo\part1\lab1\models\LedPrinter.java">
+<error line="14" column="12" severity="error" message="More than 7 parameters (found 10)." source="com.puppycrawl.tools.checkstyle.checks.sizes.ParameterNumberCheck"/>
+</file>
+<file name="D:\JAVA(Intellij)\Lab4 - Copy\src\main\java\ua\lviv\iot\algo\part1\lab1\models\MatrixPrinter.java">
+<error line="14" column="12" severity="error" message="More than 7 parameters (found 10)." source="com.puppycrawl.tools.checkstyle.checks.sizes.ParameterNumberCheck"/>
+</file>
+<file name="D:\JAVA(Intellij)\Lab4 - Copy\src\main\java\ua\lviv\iot\algo\part1\lab1\models\Printer.java">
+<error line="32" severity="error" message="Line is longer than 80 characters (found 143)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="40" column="5" severity="error" message="Class &apos;Printer&apos; looks like designed for extension (can be subclassed), but the method &apos;getHeaders&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Printer&apos; final or making the method &apos;getHeaders&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="44" column="5" severity="error" message="Class &apos;Printer&apos; looks like designed for extension (can be subclassed), but the method &apos;toCSV&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Printer&apos; final or making the method &apos;toCSV&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="45" severity="error" message="Line is longer than 80 characters (found 164)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="D:\JAVA(Intellij)\Lab4 - Copy\src\main\java\ua\lviv\iot\algo\part1\lab1\writers\PrinterWriter.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="12" column="5" severity="error" message="Class &apos;PrinterWriter&apos; looks like designed for extension (can be subclassed), but the method &apos;writeToFile&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;PrinterWriter&apos; final or making the method &apos;writeToFile&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+</checkstyle>

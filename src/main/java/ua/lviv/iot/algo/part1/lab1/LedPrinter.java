@@ -19,6 +19,14 @@ public final class LedPrinter extends Printer {
         this.zoom = zoom;
     }
 
+    public String getHeaders() {
+        return super.getHeaders() + ", countOfLightPanels, zoom";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + countOfLightPanels + ", " + zoom;
+    }
+
     @Override
     public void print(final int pages) {
         final int amountPaperAfterPrint = getPaperCount() - pages;

@@ -1,0 +1,7 @@
+ua\lviv\iot\algo\part1\lab1\models\LaserPrinter.class
+ua\lviv\iot\algo\part1\lab1\writers\PrinterWriter.class
+ua\lviv\iot\algo\part1\lab1\models\InkjetPrinter.class
+ua\lviv\iot\algo\part1\lab1\models\LedPrinter.class
+ua\lviv\iot\algo\part1\lab1\models\MatrixPrinter.class
+ua\lviv\iot\algo\part1\lab1\models\Printer.class
+ua\lviv\iot\algo\part1\lab1\managers\PrinterManager.class
