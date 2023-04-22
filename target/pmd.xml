@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.38.0" timestamp="2023-04-22T16:02:44.320">
-<file name="D:\JAVA(Intellij)\Lab4 - Copy\src\main\java\ua\lviv\iot\algo\part1\lab1\managers\PrinterManager.java">
-<violation beginline="3" endline="3" begincolumn="1" endcolumn="57" rule="UnnecessaryImport" ruleset="Code Style" package="ua.lviv.iot.algo.part1.lab1.managers" class="PrinterManager" externalInfoUrl="https://pmd.github.io/pmd-6.38.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
-Unused import 'ua.lviv.iot.algo.part1.lab1.writers.PrinterWriter'
-</violation>
-</file>
-</pmd>
