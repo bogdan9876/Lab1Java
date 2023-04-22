@@ -1,20 +1,36 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
+import lombok.ToString;
+
 @ToString(callSuper = true)
-public class MatrixPrinter extends Printer{
-    private int needlesWorks;
-    private int sensors;
-    public MatrixPrinter(int needlesWorks, int sensors, String model,
-                      String type, boolean isColor, boolean isDuplex, int paperTrayCapacity,
-                      int paperCount, int remainingPagesCount, int pagesCapability){
-        super(model, type, isColor, isDuplex, paperTrayCapacity, paperCount, remainingPagesCount, pagesCapability);
-        this.needlesWorks=needlesWorks;
-        this.sensors=sensors;}
+public final class MatrixPrinter extends Printer {
+    private final int needlesWorks;
+    private final int sensors;
+
+    public MatrixPrinter(final int needlesWorks,
+                         final int sensors, final String model,
+                         final String type, final boolean isColor,
+                         final boolean isDuplex, final int paperTrayCapacity,
+                         final int paperCount, final int remainingPagesCount,
+                         final int pagesCapability) {
+        super(model, type, isColor, isDuplex, paperTrayCapacity,
+                paperCount, remainingPagesCount, pagesCapability);
+        this.needlesWorks = needlesWorks;
+        this.sensors = sensors;
+    }
+
     @Override
-    public void print(int pages) {}
+    public void print(final int pages) {
+        int amountPaperAfterPrint = getPaperCount() - pages;
+        setPaperCount(amountPaperAfterPrint);
+    }
+
     @Override
-    public void loadPaper(int count) {}
+    public void loadPaper(final int count) {
+        int amountPaperAfterLoad = getPaperCount() + count;
+        setPaperCount(amountPaperAfterLoad);
+    }
+
     @Override
     public int getRemainingPagesCount() {
         return getPagesCapability();

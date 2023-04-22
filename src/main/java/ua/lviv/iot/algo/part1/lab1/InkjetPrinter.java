@@ -1,33 +1,48 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
+import lombok.ToString;
+
 @ToString(callSuper = true)
-public class InkjetPrinter extends Printer{
+public final class InkjetPrinter extends Printer {
     private static final int REQUIRED_COLOUR_PER_PAGE = 10;
-    private String colorType;
-    private int colorLevel;
-    private int cyan;
-    private int magenta;
-    private int yellow;
-    private int black;
-   public InkjetPrinter(String colorType, int colorLevel, int cyan, int magenta, int yellow, int black, String model,
-                 String type, boolean isColor, boolean isDuplex, int paperTrayCapacity,
-                 int paperCount, int remainingPagesCount, int pagesCapability){
-      super(model, type, isColor , isDuplex, paperTrayCapacity, paperCount, remainingPagesCount, pagesCapability);
-      this.magenta = magenta;
-      this.colorType = colorType;
-      this.colorLevel = colorLevel;
-      this.cyan = cyan;
-      this.yellow = yellow;
-      this.black = black;
+    private final String colorType;
+    private final int colorLevel;
+    private final int cyan;
+    private final int magenta;
+    private final int yellow;
+    private final int black;
+
+    public InkjetPrinter(final String colorType, final int colorLevel,
+                         final int cyan, final int magenta,
+                         final int yellow, final int black, final String model,
+                         final String type, final boolean isColor,
+                         final boolean isDuplex, final int paperTrayCapacity,
+                         final int paperCount, final int remainingPages,
+                         final int pagesCapability) {
+                super(model, type, isColor, isDuplex,
+                paperTrayCapacity, paperCount, remainingPages, pagesCapability);
+        this.colorType = colorType;
+        this.colorLevel = colorLevel;
+        this.cyan = cyan;
+        this.magenta = magenta;
+        this.yellow = yellow;
+        this.black = black;
     }
+
     @Override
-    public void print(int pages) {}
+    public void print(final int pages) {
+        int amountPaperAfterPrint = getPaperCount() - pages;
+        setPaperCount(amountPaperAfterPrint);
+    }
+
     @Override
-    public void loadPaper(int count) {}
+    public void loadPaper(final int count) {
+        int amountPaperAfterLoad = getPaperCount() + count;
+        setPaperCount(amountPaperAfterLoad);
+    }
 
     @Override
     public int getRemainingPagesCount() {
-        return (black+yellow+cyan+magenta)/REQUIRED_COLOUR_PER_PAGE;
+        return (black + yellow + cyan + magenta) / REQUIRED_COLOUR_PER_PAGE;
     }
 }

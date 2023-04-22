@@ -1,21 +1,36 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
+import lombok.ToString;
+
 @ToString(callSuper = true)
-public class LedPrinter extends Printer{
-    private int countOfLightPanels;
-    private double zoom;
-    public LedPrinter(int countOfLightPanels, double zoom, String model,
-                         String type, boolean isColor, boolean isDuplex, int paperTrayCapacity,
-                         int paperCount, int remainingPagesCount, int pagesCapability){
-        super(model, type, isColor, isDuplex, paperTrayCapacity, paperCount, remainingPagesCount, pagesCapability);
-        this.countOfLightPanels=countOfLightPanels;
-        this.zoom=zoom;
+public final class LedPrinter extends Printer {
+    private final int countOfLightPanels;
+    private final double zoom;
+
+    public LedPrinter(final int countOfLightPanels, final double zoom,
+                      final String model,
+                      final String type, final boolean isColor,
+                      final boolean isDuplex, final int paperTrayCapacity,
+                      final int paperCount, final int remainingPagesCount,
+                      final int pagesCapability) {
+        super(model, type, isColor, isDuplex, paperTrayCapacity,
+                paperCount, remainingPagesCount, pagesCapability);
+        this.countOfLightPanels = countOfLightPanels;
+        this.zoom = zoom;
     }
+
     @Override
-    public void print(int pages) {}
+    public void print(final int pages) {
+        final int amountPaperAfterPrint = getPaperCount() - pages;
+        setPaperCount(amountPaperAfterPrint);
+    }
+
     @Override
-    public void loadPaper(int count) {}
+    public void loadPaper(final int count) {
+        final int amountPaperAfterLoad = getPaperCount() + count;
+        setPaperCount(amountPaperAfterLoad);
+    }
+
     @Override
     public int getRemainingPagesCount() {
         return getPagesCapability();
