@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MatrixPrinter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LAB3</a> &gt; <a href="index.source.html" class="el_package">ua.lviv.iot.algo.part1.lab1.models</a> &gt; <span class="el_source">MatrixPrinter.java</span></div><h1>MatrixPrinter.java</h1><pre class="source lang-java linenums">package ua.lviv.iot.algo.part1.lab1.models;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+<span class="nc" id="L7">@ToString(callSuper = true)</span>
+@Getter
+@Setter
+public final class MatrixPrinter extends Printer {
+<span class="nc" id="L11">    private final int needlesWorks;</span>
+<span class="nc" id="L12">    private final int sensors;</span>
+
+    public MatrixPrinter(final int needlesWorks,
+                         final int sensors, final String model,
+                         final String type, final boolean isColor,
+                         final boolean isDuplex, final int paperTrayCapacity,
+                         final int paperCount, final int remainingPagesCount,
+                         final int pagesCapability) {
+<span class="fc" id="L20">        super(model, type, isColor, isDuplex, paperTrayCapacity,</span>
+                paperCount, remainingPagesCount, pagesCapability);
+<span class="fc" id="L22">        this.needlesWorks = needlesWorks;</span>
+<span class="fc" id="L23">        this.sensors = sensors;</span>
+<span class="fc" id="L24">    }</span>
+
+    public String getHeaders() {
+<span class="fc" id="L27">        return super.getHeaders() + &quot;, needlesWorks, sensors&quot;;</span>
+    }
+
+    public String toCSV() {
+<span class="fc" id="L31">        return super.toCSV() + &quot;, &quot; + needlesWorks + &quot;, &quot; + sensors;</span>
+    }
+
+    @Override
+    public void print(final int pages) {
+<span class="fc" id="L36">        int amountPaperAfterPrint = getPaperCount() - pages;</span>
+<span class="fc" id="L37">        setPaperCount(amountPaperAfterPrint);</span>
+<span class="fc" id="L38">    }</span>
+
+    @Override
+    public void loadPaper(final int count) {
+<span class="fc" id="L42">        int amountPaperAfterLoad = getPaperCount() + count;</span>
+<span class="fc" id="L43">        setPaperCount(amountPaperAfterLoad);</span>
+<span class="fc" id="L44">    }</span>
+
+    @Override
+    public int getRemainingPagesCount() {
+<span class="fc" id="L48">        return getPagesCapability();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
