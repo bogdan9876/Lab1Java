@@ -29,9 +29,20 @@ public abstract class Printer {
 
     private int pagesCapability;
 
+    public static final String HEADERS = "model, type, isColor, isDuplex, paperTrayCapacity, paperCount, remainingPagesCount, pagesCapability";
+
     public abstract void print(int pages);
 
     public abstract void loadPaper(int count);
 
     public abstract int getRemainingPagesCount();
+
+    public String getHeaders() {
+        return HEADERS;
+    }
+
+    public String toCSV() {
+        return model + "," + type + "," + isColor + "," + isDuplex + "," + paperTrayCapacity + "," + paperCount + "," + remainingPagesCount + "," + pagesCapability;
+    }
+
 }

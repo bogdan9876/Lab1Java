@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+LAB3,ua.lviv.iot.algo.part1.lab1,PrinterManager,0,44,0,2,0,10,0,8,0,7
+LAB3,ua.lviv.iot.algo.part1.lab1,LaserPrinter,0,41,0,0,0,11,0,5,0,5
+LAB3,ua.lviv.iot.algo.part1.lab1,LedPrinter,8,38,0,0,1,11,1,4,1,4
+LAB3,ua.lviv.iot.algo.part1.lab1,MatrixPrinter,8,38,0,0,1,11,1,4,1,4
+LAB3,ua.lviv.iot.algo.part1.lab1,InkjetPrinter,16,61,0,0,1,15,1,4,1,4
+LAB3,ua.lviv.iot.algo.part1.lab1,Printer,31,70,0,0,1,10,8,10,8,10

@@ -19,6 +19,14 @@ public final class MatrixPrinter extends Printer {
         this.sensors = sensors;
     }
 
+    public String getHeaders() {
+        return super.getHeaders() + ", needlesWorks, sensors";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + needlesWorks + ", " + sensors;
+    }
+
     @Override
     public void print(final int pages) {
         int amountPaperAfterPrint = getPaperCount() - pages;
@@ -35,4 +43,5 @@ public final class MatrixPrinter extends Printer {
     public int getRemainingPagesCount() {
         return getPagesCapability();
     }
+
 }

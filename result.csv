@@ -1,0 +1,4 @@
+model, type, isColor, isDuplex, paperTrayCapacity, paperCount, remainingPagesCount, pagesCapability, pagesDone
+RealRif,Laser,true,true,250,0,250,500, 10
+model, type, isColor, isDuplex, paperTrayCapacity, paperCount, remainingPagesCount, pagesCapability, pagesDone
+Soliq,Laser,true,false,500,0,500,1000, 0

@@ -27,7 +27,7 @@ class PrinterManagerTest {
         printerManager.addPrinter(new LedPrinter(1, 1.0, "Lazur", "LED", true,
                 false, 18, 18, 0, 180));
         printerManager.addPrinter(new InkjetPrinter("CMYK", 50, 100, 80, 60,
-                40, "", "Inkjet", true, true, 100, 50,
+                40, "T44", "Inkjet", true, true, 100, 50,
                 50, 200));
         printerManager.addPrinter(new InkjetPrinter("CMYK", 80, 6, 77, 255,
                 0, "Marok", "Inkjet", true, false, 50, 30,
