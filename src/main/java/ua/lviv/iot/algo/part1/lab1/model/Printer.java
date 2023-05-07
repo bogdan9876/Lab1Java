@@ -1,10 +1,12 @@
-package ua.lviv.iot.algo.part1.lab1.models;
+package ua.lviv.iot.algo.part1.lab1.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -29,7 +31,10 @@ public abstract class Printer {
 
     private int pagesCapability;
 
-    public static final String HEADERS = "model, type, isColor, isDuplex, paperTrayCapacity, paperCount, remainingPagesCount, pagesCapability";
+    @JsonIgnore
+    public static final String HEADERS = "model, type, isColor, isDuplex,"
+            + " paperTrayCapacity, paperCount,"
+            + " remainingPagesCount, pagesCapability";
 
     public abstract void print(int pages);
 
@@ -37,12 +42,17 @@ public abstract class Printer {
 
     public abstract int getRemainingPagesCount();
 
+    @JsonIgnore
     public String getHeaders() {
         return HEADERS;
     }
 
+    @JsonIgnore
     public String toCSV() {
-        return model + "," + type + "," + isColor + "," + isDuplex + "," + paperTrayCapacity + "," + paperCount + "," + remainingPagesCount + "," + pagesCapability;
+        return model + "," + type + "," + isColor + "," + isDuplex + ","
+                + paperTrayCapacity
+                + "," + paperCount + "," + remainingPagesCount
+                + "," + pagesCapability;
     }
 
 }

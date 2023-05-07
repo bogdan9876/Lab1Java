@@ -1,14 +1,28 @@
-package ua.lviv.iot.algo.part1.lab1.models;
+package ua.lviv.iot.algo.part1.lab1.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import net.minidev.json.annotate.JsonIgnore;
+import org.springframework.data.annotation.Id;
 
+@Entity
 @ToString(callSuper = true)
 @Getter
 @Setter
 public final class LaserPrinter extends Printer {
-    private final int pagesDone;
+    private int pagesDone;
+
+    @jakarta.persistence.Id
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    public LaserPrinter() {
+
+    }
 
     public LaserPrinter(final int pagesDone, final String model,
                         final String type, final boolean isColor,
@@ -21,10 +35,12 @@ public final class LaserPrinter extends Printer {
         this.pagesDone = pagesDone;
     }
 
+    @JsonIgnore
     public String getHeaders() {
         return super.getHeaders() + ", pagesDone";
     }
 
+    @JsonIgnore
     public String toCSV() {
         return super.toCSV() + ", " + pagesDone;
     }
@@ -46,4 +62,13 @@ public final class LaserPrinter extends Printer {
     public int getRemainingPagesCount() {
         return getPagesCapability();
     }
+
+    public void setId(final Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
 }
