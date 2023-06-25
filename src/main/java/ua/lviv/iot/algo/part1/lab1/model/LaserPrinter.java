@@ -1,28 +1,19 @@
 package ua.lviv.iot.algo.part1.lab1.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import net.minidev.json.annotate.JsonIgnore;
-import org.springframework.data.annotation.Id;
 
-@Entity
 @ToString(callSuper = true)
 @Getter
 @Setter
 public final class LaserPrinter extends Printer {
     private int pagesDone;
 
-    @jakarta.persistence.Id
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    public LaserPrinter() {
 
-    }
+    private Integer id;
+    public LaserPrinter() {}
 
     public LaserPrinter(final int pagesDone, final String model,
                         final String type, final boolean isColor,
